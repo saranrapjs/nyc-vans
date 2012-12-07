@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="/stylesheets/style.css"></link>
+<script type="text/javascript">
+	//Cufon.replace('p'); // Works without a selector engine
+window.onload = function() {
+	document.getElementById('embed').select();
+}
+
+</script>
+<script src="http://use.edgefonts.net/league-gothic.js"></script>
+</head>
+<body>
+	<div>
+		<canvas id="e" width="400" height="70" style="height:100px;width:400px;"></canvas>
+		<img src="/images/white_van.gif"/>
+		<p>{{name}}<br />
+		{{street}}<br />
+		{{city}}, {{state}} {{zip}}
+		</p>
+	</div>
+	<h1>VAN PERMALINK</h1>
+	<textarea id="embed" style='width:200px;height:18px;'>http://localhost:3000/i/{{dot}}</textarea>
+</body>
+</html>
