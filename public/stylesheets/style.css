@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 25px league-gothic,serif;
+  font: 19px league-gothic,serif;
   letter-spacing: 0px;
   text-align: center;
 }
@@ -8,28 +8,18 @@ body {
 a {
   color: #00B7FF;
 }
-canvas {
-/*	border:1px solid #000;*/
-	position: absolute;
-	top:90px;
-	left:190px;
-	z-index: 5;
-	display: none;
-}
 img {
 	margin:0 auto;
 	display: block;
 	position: absolute;
 }
 p {
-/*	opacity: 0; */
 	width: 280px;
 	height:100px;
-/*	padding:108px 0 0 140px;
-*/	margin:0 auto;
+	margin:0 auto;
 	text-align: left;
 	position: absolute;
-	left:150px;
+	left:130px;
 	top:90px;
 	line-height: 22px;
 }

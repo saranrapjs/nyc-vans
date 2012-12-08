@@ -36,7 +36,7 @@ app.get('/', function(req, res){
 	});
 });
 
-app.get('/i/:id', function(req, res){
+app.get('/van/:id', function(req, res){
 	db.get("SELECT * FROM commercial WHERE DOT_NUMBER = '"+req.params.id+"' LIMIT 1;",function(err,row) {
 		if (!row || err) {
 			res.redirect('/');
@@ -54,7 +54,8 @@ function renderRow(req,res,row) {
 	        city:row.PHY_CITY,
 	        state:row.PHY_STATE,
 	        zip:row.PHY_ZIP,
-	        dot:row.DOT_NUMBER
+	        dot:row.DOT_NUMBER,
+	        host:"http://"+req.headers.host
 	    }
 	});
 }
