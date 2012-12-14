@@ -36,13 +36,13 @@ app.get('/', function(req, res){
 		renderRow(req,res,row);
 	});
 });
-app.get('/image/:id', function(req, res){
+app.get('/image/:id/:size?', function(req, res){
 	db.get("SELECT * FROM commercial WHERE DOT_NUMBER = '"+req.params.id+"' LIMIT 1;",function(err,row) {
 		if (!row || err) {
 			res.redirect('/');
 		} else {
-
 			gm('public/images/white_van.gif')
+				//.resample(945,486)
 				.font("public/stylesheets/leaguegothic-condensed-regular-webfont.ttf", 25)
 				.drawText(150, 90, row.LEGAL_NAME)
 				.drawText(150, 115, row.PHY_STREET)
