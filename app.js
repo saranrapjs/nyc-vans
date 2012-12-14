@@ -3,7 +3,8 @@ var sqlite3 = require('sqlite3').verbose(),
 	db = new sqlite3.Database('commercial.db'),
 	express = require('express'),
 	stache = require('stache');
-
+	fs = require('fs'),
+	gm = require('gm');
 
 
 var app = module.exports = express.createServer();
@@ -35,7 +36,23 @@ app.get('/', function(req, res){
 		renderRow(req,res,row);
 	});
 });
+app.get('/image/:id', function(req, res){
+	db.get("SELECT * FROM commercial WHERE DOT_NUMBER = '"+req.params.id+"' LIMIT 1;",function(err,row) {
+		if (!row || err) {
+			res.redirect('/');
+		} else {
 
+			gm('public/images/white_van.gif')
+				.font("public/stylesheets/leaguegothic-condensed-regular-webfont.ttf", 25)
+				.drawText(150, 90, row.LEGAL_NAME)
+				.drawText(150, 115, row.PHY_STREET)
+				.drawText(150, 140, row.PHY_CITY + ", "+row.PHY_STATE+" "+row.PHY_ZIP)
+				.stream('png', function (err, stdout, stderr) {
+					stdout.pipe(res);				
+				});
+		}
+	});
+});
 app.get('/van/:id', function(req, res){
 	db.get("SELECT * FROM commercial WHERE DOT_NUMBER = '"+req.params.id+"' LIMIT 1;",function(err,row) {
 		if (!row || err) {
@@ -45,6 +62,8 @@ app.get('/van/:id', function(req, res){
 		}
 	});
 });
+
+
 
 function renderRow(req,res,row) {
 	res.render('index', {

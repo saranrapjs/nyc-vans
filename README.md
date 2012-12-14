@@ -7,6 +7,10 @@ http://ai.fmcsa.dot.gov/SMS/Data/Downloads.aspx
 
 This'll give you a csv file, described by the gov as "1,338,795 Interstate,Intrastate Hazmat and Intrastate Non-Hazmat Motor Carriers".  You can then run `node import.js` to seed a sqlite db with this data.  This sqlite db is what's used to populate the site!  It's limited to records within NYC zip codes but you could really use this for any/all if you so please.  `node app.js` is used to run the express server
 
+Font used is this open source guy:
+
+http://www.theleagueofmoveabletype.com/league-gothic
+
 TODO:
-* Canvas-ified version of the van itself (so as to be embeddable)
 * Double check syntax for DROP TABLE IF EXISTS on initial import
+

@@ -1,6 +1,10 @@
+@font-face {
+  font-family: 'league-gothic';
+  src: url('/stylesheets/leaguegothic-regular-webfont.ttf');
+}
 body {
   padding: 50px;
-  font: 19px league-gothic,serif;
+  font: 24px league-gothic,serif;
   letter-spacing: 0px;
   text-align: center;
 }
@@ -11,24 +15,25 @@ a {
 img {
 	margin:0 auto;
 	display: block;
-	position: absolute;
 }
 p {
-	width: 280px;
-	height:100px;
-	margin:0 auto;
+	width: 245px;
+	margin:5px auto;
+	padding:0;
 	text-align: left;
-	position: absolute;
-	left:130px;
-	top:90px;
 	line-height: 22px;
+	color:#EEE;
 }
-div {
-	position: relative;
-	width:630px;
-	height: 324px;
+input {
 	margin:0 auto;
+	border:0;
+	font: 24px league-gothic,serif;
+	color:#EEE;
+	line-height: 27px;
+	height:30px;
+	width:245px;
 }
+
 h1 {
 	color:#EEE;
 }
