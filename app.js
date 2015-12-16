@@ -1,6 +1,6 @@
 
 var sqlite3 = require('sqlite3').verbose(),
-	db = new sqlite3.Database('commercial.db'),
+	db = new sqlite3.Database(__dirname + '/commercial.db'),
 	express = require('express'),
 	stache = require('stache');
 	fs = require('fs'),
